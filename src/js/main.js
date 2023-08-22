@@ -181,7 +181,7 @@ accordionHeaders.forEach(title => {
 
 // questions
 const questionHeaders = document.querySelectorAll(
-  '.tarif-card__question-header'
+  '.tarif-card__question-header',
 );
 
 questionHeaders.forEach(title => {
