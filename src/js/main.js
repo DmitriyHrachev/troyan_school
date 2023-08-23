@@ -1,6 +1,14 @@
 import Swiper, { Navigation, Pagination, Mousewheel } from 'swiper';
+import { gsap } from './plugins/gsap/all.js';
+import { ScrollTrigger } from './plugins/gsap/all.js';
+import { SplitText } from './plugins/gsap/all.js';
+import { ScrollSmoother } from './plugins/gsap/ScrollSmoother.js';
+gsap.registerPlugin(ScrollTrigger, SplitText, ScrollSmoother);
 Swiper.use([Navigation, Pagination, Mousewheel]);
 
+const smoother = new ScrollSmoother({
+  effects: true,
+});
 // const parentItem = document.querySelector('.pll-parent-menu-item');
 // const parentLink = document.querySelector('.pll-parent-menu-item a');
 // const langList = document.querySelector('.sub-menu');
@@ -181,7 +189,7 @@ accordionHeaders.forEach(title => {
 
 // questions
 const questionHeaders = document.querySelectorAll(
-  '.tarif-card__question-header',
+  '.tarif-card__question-header'
 );
 
 questionHeaders.forEach(title => {
@@ -214,3 +222,97 @@ teacherCards.forEach(card => {
     card.classList.remove('active');
   });
 });
+
+// Hero block
+{
+  const sectionRef = document.querySelector('.hero-section');
+  const q = gsap.utils.selector(sectionRef);
+  gsap.context(() => {
+    const titleSplit = new SplitText(q('.hero-section__title'), {
+      type: 'lines,words',
+    });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.hero-section__title',
+        start: 'top 80%',
+        end: 'bottom 20%',
+      },
+    });
+    tl.fromTo(
+      titleSplit.words,
+      { yPercent: 100, opacity: 0 },
+      {
+        yPercent: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.1,
+        ease: 'back.out(1.7)',
+      }
+    )
+      .fromTo('li', { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.1 })
+      .fromTo(
+        '.hero-section__img',
+        { opacity: 0 },
+        { opacity: 1, duration: 1 },
+        '-=1'
+      );
+  }, sectionRef);
+}
+
+// Buttons Animation
+{
+  const targets = document.querySelectorAll('[data-anim="button"]');
+  targets.forEach(target => {
+    gsap.fromTo(
+      target,
+      {
+        yPercent: -50,
+        opacity: 0,
+      },
+      {
+        yPercent: 0,
+        opacity: 1,
+        // duration: 1,
+        scrollTrigger: {
+          trigger: target,
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse',
+          // markers: true,
+        },
+      }
+    );
+  });
+}
+
+// Title Animation
+{
+  const targets = document.querySelectorAll('[data-anim="title"]');
+  targets.forEach(target => {
+    const titleSplit = new SplitText(target, {
+      type: 'lines,words',
+    });
+    gsap.fromTo(
+      titleSplit.words,
+      {
+        yPercent: 100,
+        opacity: 0,
+      },
+      {
+        yPercent: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: target,
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse',
+          // markers: true,
+        },
+
+        ease: 'back.out(1.7)',
+      }
+    );
+  });
+}
