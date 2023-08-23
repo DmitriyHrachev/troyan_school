@@ -1,0 +1,50 @@
+@import '/node_modules/reset-css/reset.css';
+@import './base/fonts';
+// PLUGINS
+
+@function toIndex($value) {
+  $resValue: calc(
+    (var(--vw, 1vw) + var(--vh, 1vh)) * (#{$value} / var(--toIndex, 30))
+  );
+  @return $resValue;
+}
+
+// UTILS
+
+// SETTINGS
+@import './settings/vars';
+
+// @import './settings/grid';
+@import './settings/common';
+@import './settings/typo';
+
+// UI
+@import './ui/button.scss';
+@import './ui/link.scss';
+
+// COMPONENTS
+@import './components/header.scss';
+@import './components/tarif-card.scss';
+@import './components/material-card.scss';
+@import './components/accardion.scss';
+@import './components/footer.scss';
+
+// SECTIONS
+
+@import './sections/hero-section.scss';
+@import './sections/about-section.scss';
+@import './sections/whom-section.scss';
+@import './sections/format-section.scss';
+@import './sections/example-section.scss';
+@import './sections/mentoring-section.scss';
+@import './sections/booking-section.scss';
+@import './sections/benefits-section.scss';
+@import './sections/program-section.scss';
+@import './sections/teachers-section.scss';
+@import './sections/results-section.scss';
+@import './sections/reviews-section.scss';
+@import './sections/tarrifs-section.scss';
+@import './sections/connect-section.scss';
+@import './sections/wt-section.scss';
+@import './sections/materials-section.scss';
+@import './sections/faq-section.scss';

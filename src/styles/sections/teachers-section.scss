@@ -1,0 +1,223 @@
+.teachers-section {
+  &__title.title {
+    margin-bottom: 50px;
+    span {
+      display: inline-block;
+      color: #fff;
+      padding: 3px 10px;
+      background: #76ceff;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+  }
+  &__controls {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  &__swiper-button-next {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    border-radius: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  &__swiper-button-prev {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    border-radius: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .swiper-pagination {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    top: auto;
+    z-index: 0;
+  }
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    margin: 0 2px;
+    &.swiper-pagination-bullet-active {
+      background-color: #76ceff;
+    }
+  }
+  .swiper-wrapper,
+  .swiper {
+    overflow: unset;
+  }
+}
+
+.teacher-card {
+  border-radius: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: #fff;
+  transition: 0.3s;
+  &.active {
+    background: #76ceff;
+    .teacher-card {
+      &__back {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+  &__img {
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__content {
+    position: relative;
+  }
+  &__front,
+  &__back {
+    padding: 35px;
+  }
+  &__name {
+    color: #000;
+    font-family: Atyp Display;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%; /* 34.5px */
+    margin-bottom: 15px;
+    position: relative;
+    &::before {
+      content: '-';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: calc(100% + 12px);
+    }
+  }
+  &__skills {
+    color: #000;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 145%; /* 18.85px */
+    letter-spacing: -0.13px;
+    margin-bottom: 35px;
+  }
+  .button {
+    width: 100%;
+
+    cursor: pointer;
+  }
+  &__open-button {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  &__close-button {
+    border: none;
+  }
+  &__front {
+    .teacher-card {
+      &__skills {
+        height: 76px;
+        overflow: hidden;
+      }
+    }
+  }
+  &__back {
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: calc(100% + 2px);
+    background: #76ceff;
+    z-index: 1;
+    border-radius: 0 0 38px 38px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    .teacher-card {
+      &__name {
+        color: #fff;
+      }
+      &__skills {
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .teachers-section {
+    &__title.title {
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &__controls {
+      margin-top: 60px;
+      justify-content: center;
+      gap: 40px;
+    }
+    .swiper-pagination {
+      width: auto;
+    }
+  }
+
+  .teacher-card {
+    &__front,
+    &__back {
+      padding: 50px;
+    }
+    &__name {
+      font-size: 40px;
+      margin-bottom: 25px;
+    }
+    &__skills {
+      margin-bottom: 50px;
+      font-size: 17px;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .teachers-section {
+    &__title.title {
+      max-width: 100%;
+      margin-bottom: 100rem;
+    }
+    &__controls {
+      margin-top: 60rem;
+    }
+  }
+  .teacher-card {
+    &__front,
+    &__back {
+      padding: 50rem;
+    }
+    &__name {
+      font-size: 40rem;
+      margin-bottom: 25rem;
+    }
+    &__skills {
+      margin-bottom: 50rem;
+      font-size: 17rem;
+    }
+  }
+}

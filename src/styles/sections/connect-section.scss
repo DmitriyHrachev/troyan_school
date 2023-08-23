@@ -1,0 +1,63 @@
+.connect-section {
+  .container {
+    display: grid;
+    gap: 50px;
+  }
+  &__title.title {
+    margin-bottom: 0;
+    span {
+      text-decoration: none;
+      color: #fff;
+      background: #76ceff;
+      padding: 0 10px;
+      border-radius: 10px;
+    }
+  }
+  &__text {
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 155%; /* 21.7px */
+    letter-spacing: -0.14px;
+    max-width: 270px;
+    margin: 0 auto;
+    strong {
+      font-weight: 700;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .connect-section {
+    .container {
+      gap: 60px;
+    }
+    &__text {
+      font-size: 22px;
+      max-width: 410px;
+    }
+    .button {
+      max-width: 410px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .connect-section {
+    .container {
+      gap: 50rem;
+    }
+    &__title.title {
+      max-width: 740rem;
+      margin: 0 auto;
+    }
+    &__text {
+      font-size: 25rem;
+      max-width: 460rem;
+    }
+  }
+}

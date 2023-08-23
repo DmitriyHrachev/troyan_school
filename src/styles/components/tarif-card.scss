@@ -1,0 +1,322 @@
+.tarif-card {
+  border-radius: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 20px;
+  display: grid;
+  gap: 20px;
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 20px;
+    background: #76ceff;
+    height: 120px;
+  }
+  &__icon {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  &__title {
+    color: #fff;
+    font-family: 'Atyp Display';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 33.6px */
+    letter-spacing: -0.24px;
+    max-width: 130px;
+  }
+  &__question {
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    background: #fff;
+    &.active {
+      .tarif-card {
+        &__question-body {
+          max-height: 1000px;
+        }
+        &__question-icon {
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+  &__question-header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  &__question-title {
+    color: #000;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 18.2px */
+    letter-spacing: -0.13px;
+  }
+  &__question-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #76ceff;
+    svg {
+      transition: 0.3s;
+    }
+  }
+  &__question-body {
+    padding: 0 20px;
+    overflow: hidden;
+    max-height: 0;
+    transition: 0.3s;
+    ul {
+      padding-bottom: 20px;
+      color: #000;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 140%; /* 23.8px */
+      letter-spacing: -0.17px;
+      display: grid;
+      gap: 10px;
+      li {
+        position: relative;
+        padding-left: 20px;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 6px;
+          left: 0;
+          width: 7px;
+          height: 7px;
+          border-radius: 2px;
+          background-color: #76ceff;
+        }
+      }
+    }
+  }
+  &__body {
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    background: #fff;
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+  }
+  &__list {
+    color: #000;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 155%; /* 20.15px */
+    letter-spacing: -0.13px;
+    strong {
+      font-weight: 700;
+    }
+    li {
+      &.unactive {
+        color: rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+  &__notice {
+    color: #000;
+    font-family: 'Atyp Display';
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 155%; /* 20.15px */
+    letter-spacing: -0.13px;
+    max-width: 225px;
+  }
+  &.gold {
+    background: #ffc700;
+    .tarif-card {
+      &__header {
+        background: #ffc700;
+      }
+      &__question {
+        border: none;
+      }
+      &__question-icon {
+        background: #ffc700;
+      }
+      &__question-body li::before {
+        background-color: #ffc700;
+      }
+      &__body {
+        border: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .tarif-card {
+    padding: 30px;
+    gap: 30px;
+    &__title {
+      font-size: 30px;
+    }
+    &__qusetion {
+      padding: 30px;
+    }
+    &__question-header {
+      padding: 30px;
+    }
+    &__question-body {
+      padding: 0 30px;
+      ul {
+        font-size: 17px;
+        padding-bottom: 30px;
+        li {
+          &::before {
+            top: 9px;
+          }
+        }
+      }
+    }
+    &__question-title {
+      font-size: 17px;
+    }
+    &__question-icon {
+      width: 30px;
+      height: 30px;
+      svg {
+        width: 50%;
+        height: auto;
+      }
+    }
+    &__body {
+      padding: 30px;
+      gap: 30px;
+    }
+    &__list {
+      font-size: 17px;
+      max-width: 82%;
+    }
+    &__notice {
+      max-width: 82%;
+      font-size: 17px;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .tarif-card {
+    padding: 30rem;
+    gap: 30rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    &__title {
+      font-size: 30rem;
+      max-width: 130rem;
+    }
+    &__qusetion {
+      padding: 30rem;
+    }
+    &__question-header {
+      padding: 30rem;
+    }
+    &__question-body {
+      padding: 0 30rem;
+      ul {
+        font-size: 17rem;
+        padding-bottom: 30rem;
+        li {
+          &::before {
+            top: 9rem;
+          }
+        }
+      }
+    }
+    &__question-title {
+      font-size: 17rem;
+    }
+    &__question-icon {
+      width: 30rem;
+      height: 30rem;
+      svg {
+        width: 50%;
+        height: auto;
+      }
+    }
+    &__body {
+      padding: 30rem;
+      gap: 30rem;
+      flex-grow: 1;
+    }
+    &__list {
+      font-size: 17rem;
+      max-width: 100%;
+    }
+    &__notice {
+      max-width: 100%;
+      font-size: 17rem;
+    }
+    .button {
+      margin-top: auto;
+    }
+    &.gold {
+      padding: 50rem 50rem 140rem 50rem;
+      display: grid;
+      grid-template-columns: 1fr 530rem;
+      align-items: flex-start;
+      gap: 25rem 20rem;
+      position: relative;
+      .tarif-card {
+        &__header {
+          height: auto;
+          justify-content: flex-start;
+          order: 1;
+          grid-column: 1 / -1;
+        }
+        &__body {
+          order: 2;
+        }
+        &__list {
+          columns: 2;
+          gap: 80rem;
+          li {
+            margin-bottom: 10rem;
+          }
+        }
+        &__question {
+          order: 3;
+        }
+        &__title {
+          max-width: 100%;
+        }
+        &__notice {
+          position: absolute;
+          bottom: 40rem;
+          right: 50rem;
+          color: #fff;
+          max-width: 530rem;
+          text-align: center;
+        }
+      }
+      .button {
+        position: absolute;
+        bottom: 140rem;
+        right: 50rem;
+        width: 530rem;
+      }
+    }
+  }
+}

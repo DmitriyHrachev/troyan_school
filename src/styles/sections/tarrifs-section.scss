@@ -1,0 +1,20 @@
+.tarrifs-section {
+  &__list {
+    display: grid;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .tarrifs-section {
+    &__list {
+      gap: 20rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    &__item {
+      &:last-child {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+}

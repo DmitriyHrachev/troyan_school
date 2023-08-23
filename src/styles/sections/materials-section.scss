@@ -1,0 +1,15 @@
+.materials-section {
+  &__list {
+    display: grid;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .materials-section {
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20rem;
+    }
+  }
+}

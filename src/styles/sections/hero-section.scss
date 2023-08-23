@@ -1,0 +1,144 @@
+.hero-section {
+  padding: 170px 0 75px;
+  &__title {
+    color: #000;
+    font-family: 'Atyp Display';
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%; /* 47.25px */
+    letter-spacing: -0.9px;
+    margin-bottom: 25px;
+    max-width: 300px;
+  }
+  &__list {
+    display: grid;
+    gap: 10px;
+    color: #000;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.13px;
+    margin-bottom: 50px;
+    strong {
+      font-weight: 700;
+    }
+    li {
+      position: relative;
+      padding-left: 20px;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: 6px;
+        width: 4px;
+        height: 4px;
+        background-color: #000;
+        border-radius: 50%;
+      }
+    }
+  }
+  &__buttons {
+    display: grid;
+    gap: 5px;
+  }
+  &__content {
+    position: relative;
+    margin-bottom: 50px;
+  }
+  &__label {
+    position: absolute;
+    top: -44px;
+    right: 0;
+    transform: rotate(11.658deg);
+
+    background: #76ceff;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 112%; /* 13.44px */
+    letter-spacing: -0.24px;
+  }
+  &__img {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 220px 0 100px;
+    &__title {
+      font-size: 70px;
+      max-width: 700px;
+      margin-bottom: 60px;
+    }
+    &__list {
+      margin-bottom: 60px;
+      font-size: 17px;
+      li {
+        &::before {
+          top: 9px;
+          width: 5px;
+          height: 5px;
+        }
+      }
+    }
+    &__buttons {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    &__label {
+      top: -75px;
+      right: auto;
+      left: 500px;
+      width: 140px;
+      height: 140px;
+      font-size: 17px;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-section {
+    padding-top: 200rem;
+    padding-bottom: 100rem;
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 655rem;
+      gap: 160rem;
+      align-items: center;
+    }
+    &__label {
+      width: 160rem;
+      height: 160rem;
+      font-size: 20rem;
+      left: 720rem;
+    }
+    &__title {
+      font-size: 100rem;
+      max-width: 100%;
+      margin-bottom: 35rem;
+    }
+    &__list {
+      font-size: 17rem;
+      gap: 10rem;
+      margin-bottom: 90rem;
+    }
+    &__buttons {
+      max-width: 650rem;
+      gap: 10rem;
+    }
+  }
+}

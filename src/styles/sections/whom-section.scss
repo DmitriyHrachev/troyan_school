@@ -1,0 +1,126 @@
+.whom-section {
+  &__title.title {
+    margin-bottom: 35px;
+    span {
+      text-decoration: none;
+      border-radius: 10px;
+      background: #76ceff;
+      color: #fff;
+      display: inline-block;
+      padding: 3px 10px;
+    }
+  }
+  &__text {
+    text-align: center;
+    margin-bottom: 35px;
+    color: #000;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.13px;
+  }
+  &__list {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  &__item {
+    padding: 20px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: #fff;
+    display: grid;
+    gap: 15px;
+  }
+  &__item-icon {
+    font-size: 40px;
+    line-height: 135%; /* 54px */
+  }
+  &__item-title {
+    color: #000;
+    font-family: 'Atyp Display';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%; /* 21.6px */
+    letter-spacing: -0.32px;
+    max-width: 210px;
+  }
+}
+
+@media (min-width: 768px) {
+  .whom-section {
+    &__title.title {
+      font-size: 70px;
+      max-width: 460px;
+      margin: 0 auto 60px;
+    }
+    &__text {
+      font-size: 22px;
+      margin-bottom: 60px;
+    }
+    &__item {
+      padding: 40px;
+    }
+    &__item-title {
+      font-size: 22px;
+      max-width: 400px;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .whom-section {
+    .container {
+      position: relative;
+    }
+    &__title.title {
+      font-size: 70rem;
+      max-width: 100%;
+      margin-bottom: 50rem;
+    }
+    &__text {
+      font-size: 22rem;
+      margin-bottom: 70rem;
+    }
+    &__list {
+      grid-template-columns: repeat(8, 1fr);
+      gap: 25rem 20rem;
+    }
+    &__item {
+      padding: 40rem;
+      gap: 15rem;
+      &:nth-child(1) {
+        grid-column: 1 / span 2;
+      }
+      &:nth-child(2) {
+        grid-column: 3 / span 2;
+      }
+      &:nth-child(3) {
+        grid-column: 5 / span 2;
+      }
+      &:nth-child(4) {
+        grid-column: 7 / span 2;
+      }
+      &:nth-child(5) {
+        grid-column: 1 / span 3;
+      }
+      &:nth-child(6) {
+        grid-column: 4 / span 3;
+      }
+    }
+    &__item-icon {
+      font-size: 50rem;
+    }
+    &__item-title {
+      font-size: 22rem;
+    }
+    .button {
+      position: absolute;
+      bottom: 0;
+      right: 60rem;
+      width: calc(100% / 4 - 45rem);
+    }
+  }
+}
